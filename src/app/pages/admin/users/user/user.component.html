@@ -19,7 +19,7 @@
     </ng-container>
     <ng-container matColumnDef="groupName">
       <th mat-header-cell *matHeaderCellDef>角色</th>
-      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+      <td mat-cell *matCellDef="let element"> {{formatRole(element.role)}} </td>
     </ng-container>
     <ng-container matColumnDef="config">
       <th mat-header-cell *matHeaderCellDef>管理</th>
@@ -33,8 +33,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <div class="bottom">
-    <mat-paginator [pageSizeOptions]="[size]" [pageIndex]="index"
-                   [length]="this.length" (page)="configPage($event)" ></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[pageInfo.pageSize]" [pageIndex]="pageInfo.pageIndex"
+                   [length]="pageInfo.length" (page)="configPage($event)"></mat-paginator>
   </div>
   <div class="add-btn">
     <button mat-fab color="accent" aria-label="添加" (click)="add()">

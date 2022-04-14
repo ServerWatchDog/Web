@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {UserView} from "../user.component";
+import {UserView} from "../../../../../service/mods/user-crud.service";
 
 @Component({
   selector: 'app-insert',

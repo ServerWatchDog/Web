@@ -34,6 +34,7 @@ import { UserComponent } from './pages/admin/users/user/user.component';
 import { GroupComponent } from './pages/admin/users/group/group.component';
 import { UserInsertComponent } from './pages/admin/users/user/insert/user-insert.component';
 import { DeleteComponent } from './views/dialog/delete/delete.component';
+import { RoleInsertComponent } from './pages/admin/users/group/insert/role-insert.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DeleteComponent } from './views/dialog/delete/delete.component';
     UserComponent,
     GroupComponent,
     UserInsertComponent,
-    DeleteComponent
+    DeleteComponent,
+    RoleInsertComponent
   ],
   imports: [
     MatDialogModule,

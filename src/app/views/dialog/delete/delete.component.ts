@@ -1,5 +1,6 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Injectable, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-delete',
@@ -15,5 +16,19 @@ export class DeleteComponent {
     @Inject(MAT_DIALOG_DATA) public data: string) {
   }
 
+}
 
+@Injectable({
+  providedIn: 'root'
+})
+export class DeleteService {
+  constructor(public dialog: MatDialog) {
+  }
+
+  newDialog(data: any): Observable<boolean> {
+    return this.dialog.open(DeleteComponent, {
+      width: '400px',
+      data: "你确定删除 \'" + data + "\' 吗？此操作不可恢复！"
+    }).afterClosed();
+  }
 }
