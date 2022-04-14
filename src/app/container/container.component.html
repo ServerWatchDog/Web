@@ -1,0 +1,12 @@
+<div class="root">
+  <div class="container" *ngIf="!finish">
+    <div class="loading">
+      <mat-progress-bar color="accent" class="load-process" mode="query"></mat-progress-bar>
+      <div class="status">{{status}}</div>
+    </div>
+  </div>
+
+  <div class="child" *ngIf="finish">
+    <router-outlet></router-outlet>
+  </div>
+</div>

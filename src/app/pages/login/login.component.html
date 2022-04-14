@@ -1,0 +1,29 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>用户登录</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+</p>
+<form class="login-form" [formGroup]="loginForm">
+  <div class="login-context">
+    <h2 class="text-center">登录</h2>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>邮箱或手机号</mat-label>
+      <input matInput="email" minlength="2" type="email" formControlName="email" placeholder="hi@example.com"/>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>密码</mat-label>
+      <input matInput="password" type="password" formControlName="password" placeholder="password"/>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill" *ngIf="showCode">
+      <mat-label>验证码</mat-label>
+      <input matInput="text" type="text" formControlName="code" placeholder="code"/>
+    </mat-form-field>
+    <div class="button-context">
+      <a><p class="forget-btn btn" routerLink="/env/reset">忘记密码</p></a>
+      <button mat-raised-button [disabled]="!loginForm.valid" color="primary" class="login-btn" type="submit"
+              (click)="login()">登陆
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="head">
+    <img src="assets/img/wallpaper.png" class="background" alt="背景图片"/>
+    <div class="head-context">
+      <h3 class="name">欢迎你，{{info.name}}</h3>
+      <h4 class="email">邮箱：{{info.email}}</h4>
+      <div class="icon">
+        <img alt="" class="image-item" [src]="info.url">
+      </div>
+    </div>
+  </div>
+  <div class="menu-context">
+    <mat-list>
+      <mat-list-item *ngFor="let item of menu"
+                     [ngClass]="select(item.url)"
+                     matRipple class="btn" (click)="openUrl(item.url)">
+        {{item.title}}</mat-list-item>
+
+    </mat-list>
+  </div>
+  <div class="footer">
+    <button mat-button class="menu-item" (click)="logout()" autofocus>注销</button>
+  </div>
+
+</div>

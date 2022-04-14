@@ -1,0 +1,13 @@
+<mat-sidenav-container class="container" *ngIf="true">
+  <mat-sidenav mode="over" [(opened)]="dashboard.drawer" class="sidebar-context">
+    <app-side-bar></app-side-bar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="site">
+      <div class="data-context">
+        <router-outlet class="context"></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

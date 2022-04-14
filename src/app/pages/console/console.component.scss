@@ -1,0 +1,25 @@
+.container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.sidebar-context{
+  z-index: 999999;
+  right: 20%;
+  max-width: 300px;
+  left: 0;
+}
+.site{
+  width: 100%;
+  height: 100%;
+
+  .data-context{
+    height: 100%;
+    margin: 0 auto;
+  }
+
+}

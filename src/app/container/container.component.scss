@@ -1,0 +1,45 @@
+
+.container-hide{
+  display: none;
+}
+
+.container {
+  display: flex;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .loading {
+    width: 30%;
+    display: inline-block;
+
+
+    .load-process {
+    }
+
+    .status {
+      margin-top: 10px;
+      text-align: right;
+    }
+  }
+}
+.root{
+  height: 100%;
+  width: 100%;
+  display: block;
+
+  .child{
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+}

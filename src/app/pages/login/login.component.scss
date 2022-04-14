@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@import 'src/assets/theme.scss';
+
+.login-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-context {
+  display: inline-block;
+  padding: 4%;
+  max-width: 500px;
+  text-align: right;
+}
+
+.login-btn {
+  width: 100%;
+}
+
+.register-btn {
+  display: inline-block;
+  float: left;
+  color: mat.get-color-from-palette($accent, 'text');
+}
+
+.forget-btn {
+  display: inline-block;
+  float: right;
+  color: mat.get-color-from-palette($accent, 'text');
+}
