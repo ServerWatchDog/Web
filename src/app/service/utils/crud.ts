@@ -1,13 +1,13 @@
 import {Observable} from "rxjs";
 
-export interface Crud<IN, OUT> {
+export interface Crud<IN, OUT,ID> {
   insert(input: IN): Observable<OUT>
 
-  update(id: number, input: IN): Observable<OUT>
+  update(id: ID, input: IN): Observable<OUT>
 
   select(index: number, size: number): Observable<PageResult<OUT>>
 
-  delete(id: number): Observable<CrudDeleteResult>
+  delete(id: ID): Observable<CrudDeleteResult>
 }
 
 export interface PageResult<T> {

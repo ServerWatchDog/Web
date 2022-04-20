@@ -7,7 +7,7 @@ import {MiniUserResultView, UserRoleService} from "./user-role.service";
 @Injectable({
   providedIn: 'root'
 })
-export class UserCrudService implements Crud<UserView, UserResultView> {
+export class UserCrudService implements Crud<UserView, UserResultView, number> {
 
   constructor(private http: SessionHttpService) {
   }

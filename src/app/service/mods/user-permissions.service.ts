@@ -12,8 +12,8 @@ export class UserPermissionsService {
   constructor(private http: SessionHttpService) {
   }
 
-  select(): Observable<MiniPermissionsView> {
-    return this.http.asyncGet<MiniPermissionsView>("/api/admin/permissions")
+  select(): Observable<MiniPermissionsView[]> {
+    return this.http.asyncGet<MiniPermissionsView[]>("/api/admin/permissions")
   }
 
 }

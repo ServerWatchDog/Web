@@ -38,10 +38,8 @@ export class ContainerComponent {
           this.route.navigate(['/login']).then()
           break;
         case this.appMod.SUCCESS:
-          if ('/' == decodeURI(window.location.pathname)) {
+          if ('/' == decodeURI(this.route.url)) {
             this.route.navigate(['dashboard']).then()
-          } else {
-
           }
           break;
       }

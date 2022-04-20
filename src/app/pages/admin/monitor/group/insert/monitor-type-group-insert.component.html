@@ -1,0 +1,18 @@
+<h1 mat-dialog-title *ngIf="internalData == null">添加采集分组</h1>
+<h1 mat-dialog-title *ngIf="internalData != null">修改采集分组</h1>
+<div mat-dialog-content>
+  <div class="name">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>名称</mat-label>
+      <input matInput placeholder="" [(ngModel)]="data.name">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>详情</mat-label>
+      <input matInput placeholder="" [(ngModel)]="data.description">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [matDialogClose]="null">取消</button>
+  <button mat-button [matDialogClose]="data">确定</button>
+</div>

@@ -45,6 +45,10 @@ export class SideBarComponent implements OnInit {
     {
       title: '预警管理',
       url: '/alarm'
+    },
+    {
+      title: '采集管理',
+      url: '/monitor'
     }, {
       title: '日志管理',
       url: '/log'

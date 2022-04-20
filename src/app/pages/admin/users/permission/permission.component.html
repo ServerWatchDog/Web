@@ -1,0 +1,12 @@
+<div class="content">
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let shoe of permissionsList" selected>
+      <div class="left">
+        {{shoe.id}}
+      </div>
+      <div class="right">
+        {{shoe.description}}
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+</div>

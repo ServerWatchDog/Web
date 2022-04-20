@@ -1,0 +1,42 @@
+<h1 mat-dialog-title *ngIf="data!=null && data.data == null">添加采集指标</h1>
+<h1 mat-dialog-title *ngIf="data!=null && data.data != null">修改采集指标</h1>
+<div mat-dialog-content>
+  <div class="name">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="" [(ngModel)]="resultData.id" [disabled]="data!=null && data.data != null">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>名称</mat-label>
+      <input matInput placeholder="" [(ngModel)]="resultData.name">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>详情</mat-label>
+      <input matInput placeholder="" [(ngModel)]="resultData.description">
+    </mat-form-field>
+  </div>
+  <div class="select">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>采集归组</mat-label>
+      <mat-select [(ngModel)]="resultData.typeGroupId" name="typeGroupId">
+        <mat-option *ngFor="let typeG of typeGroup" [value]="typeG.id">
+          {{typeG.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="select">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>采集数据类型</mat-label>
+      <mat-select [(ngModel)]="resultData.type" name="user">
+        <mat-option *ngFor="let type of dataType" [value]="type.id">
+          {{type.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [matDialogClose]="null">取消</button>
+  <button mat-button [matDialogClose]="resultData">确定</button>
+</div>

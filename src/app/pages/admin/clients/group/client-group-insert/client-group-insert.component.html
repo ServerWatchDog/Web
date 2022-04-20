@@ -1,0 +1,32 @@
+<h1 mat-dialog-title *ngIf="data!=null && data.data == null">添加终端分组</h1>
+<h1 mat-dialog-title *ngIf="data!=null && data.data != null">修改终端分组</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>详情</mat-label>
+    <input matInput placeholder="" [(ngModel)]="resultData.description">
+  </mat-form-field>
+</div>
+<div class="select">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>绑定客户端</mat-label>
+    <mat-select [(ngModel)]="resultData.clients" name="typeGroupId" multiple>
+      <mat-option *ngFor="let client of clients" [value]="client.id">
+        {{client.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="select">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>绑定角色</mat-label>
+    <mat-select [(ngModel)]="resultData.roleId" name="user">
+      <mat-option *ngFor="let role of roles" [value]="role.id">
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [matDialogClose]="null">取消</button>
+  <button mat-button [matDialogClose]="resultData">确定</button>
+</div>

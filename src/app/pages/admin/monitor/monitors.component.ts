@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import {DashBoardService} from "../../../service/mods/dash-board.service";
 import {TitleService} from "../../../service/utils/title.service";
 import {Router} from "@angular/router";
+import {ChildRoute} from "../users/users.component";
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-monitor',
+  templateUrl: './monitors.component.html',
+  styleUrls: ['./monitors.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class MonitorsComponent implements OnInit {
+
 
   links: ChildRoute[] = [{
-    name: '用户管理',
-    url: '/user/user'
+    name: '采集指标管理',
+    url: '/monitor/monitor'
   }, {
-    name: '角色管理',
-    url: '/user/group'
-  }, {
-    name: '权限一览',
-    url: '/user/permission'}
+    name: '采集指标分组',
+    url: '/monitor/group'
+  }
   ];
   activeLink = this.links[0];
 
@@ -29,9 +29,9 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("用户管理")
-    if ('/user' == decodeURI(this.route.url)) {
-      this.route.navigate(['user','user']).then()
+    this.title.setTitle("采集管理")
+    if ('/monitor' == decodeURI(this.route.url)) {
+      this.route.navigate(['monitor','monitor']).then()
     }
     for (let link of this.links) {
       if (link.url == this.route.url){
@@ -40,9 +40,4 @@ export class UsersComponent implements OnInit {
     }
   }
 
-}
-
-export interface ChildRoute {
-  name: string,
-  url: string
 }

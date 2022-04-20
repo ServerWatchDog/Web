@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Crud, CrudDeleteResult, PageResult} from "../utils/crud";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {SessionHttpService} from "../utils/session-http.service";
+import {MiniRoleResultView} from "./user-crud.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserRoleService implements Crud<UserRoleView, UserRoleResultView> {
+export class UserRoleService implements Crud<UserRoleView, UserRoleResultView, number> {
 
   constructor(private http: SessionHttpService) {
   }
@@ -27,6 +28,18 @@ export class UserRoleService implements Crud<UserRoleView, UserRoleResultView> {
     return this.http.asyncPut<UserRoleResultView>("/api/admin/roles/" + id, input);
   }
 
+  selectMini(): Observable<Array<MiniRoleResultView>> {
+    return this.select(0, 1000).pipe(
+      map(it => it.data)
+    ).pipe(map(
+      data => data.map(it => {
+        return {
+          "id": it.id,
+          "name": it.name,
+        }
+      })
+    ));
+  }
 }
 
 export interface UserRoleView {

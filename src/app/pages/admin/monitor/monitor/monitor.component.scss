@@ -1,0 +1,40 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 20px;
+  display: block;
+  overflow: auto;
+
+  table {
+    width: 100%;
+    min-width: 768px;
+    text-align: center;
+
+    th {
+      font-size: medium;
+      text-align: center;
+    }
+
+  }
+  .bottom{
+    width: 100%;
+    min-width: 768px;
+
+  }
+
+  .add-btn {
+    padding: 10px;
+    right: 20px;
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+  }
+}
+
+.btn{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
