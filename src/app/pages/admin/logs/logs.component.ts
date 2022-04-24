@@ -3,25 +3,27 @@ import {ChildRoute} from "../users/users.component";
 import {DashBoardService} from "../../../service/mods/dash-board.service";
 import {TitleService} from "../../../service/utils/title.service";
 import {Router} from "@angular/router";
-import {fromEvent} from "rxjs";
 
 @Component({
-  selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.scss']
+  selector: 'app-logs',
+  templateUrl: './logs.component.html',
+  styleUrls: ['./logs.component.scss']
 })
-export class ClientsComponent implements OnInit {
+export class LogsComponent implements OnInit {
 
 
   links: ChildRoute[] = [{
-    name: '终端管理',
-    url: '/client/client'
+    name: '终端采集日志',
+    url: '/logs/client'
   }, {
-    name: '终端分组',
-    url: '/client/group'
+    name: '终端报警日志',
+    url: '/logs/alarm'
   }, {
-    name: '采集指标管理',
-    url: '/client/monitor'
+    name: '消息推送日志',
+    url: '/logs/message'
+  }, {
+    name: '操作日志',
+    url: '/logs/operate'
   }
   ];
   activeLink = this.links[0];
@@ -33,14 +35,15 @@ export class ClientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("终端管理")
-    if ('/client' == decodeURI(this.route.url)) {
-      this.route.navigate(['client', 'client']).then()
+    this.title.setTitle("日志管理")
+    if ('/logs' == decodeURI(this.route.url)) {
+      this.route.navigate([this.links[0].url]).then()
     }
     for (let link of this.links) {
-      if (link.url == this.route.url) {
+      if (this.route.url.startsWith(link.url)) {
         this.activeLink = link
       }
     }
   }
+
 }

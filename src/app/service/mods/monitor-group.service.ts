@@ -51,7 +51,7 @@ export interface MonitorGroupView {
 export interface MiniMonitorGroupView {
   id: number,
   name: string,
-  "description": string
+  description: string
 }
 
 export interface MonitorGroupResultView {

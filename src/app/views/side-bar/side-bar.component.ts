@@ -51,10 +51,13 @@ export class SideBarComponent implements OnInit {
       url: '/monitor'
     }, {
       title: '日志管理',
-      url: '/log'
+      url: '/logs'
     }, {
       title: '用户管理',
       url: '/user'
+    }, {
+      title: '系统管理',
+      url: '/system'
     }, {
       title: '个人中心',
       url: '/profile'
@@ -66,14 +69,16 @@ export class SideBarComponent implements OnInit {
 
   openUrl(path: string) {
     this.dashboard.toggle()
-    this.route.navigate([path]).then()
+    if (!decodeURI(this.route.url).startsWith(path)) {
+      this.route.navigate([path]).then()
+    }
   }
 
   logout() {
   }
 
   select(url: string) {
-    if (decodeURI(window.location.pathname).startsWith(url)) {
+    if (decodeURI(this.route.url).startsWith(url)) {
       return "item-select"
     } else {
       return "item-no-select"

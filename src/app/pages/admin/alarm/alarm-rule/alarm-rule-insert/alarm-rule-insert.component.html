@@ -1,0 +1,30 @@
+<h1 mat-dialog-title *ngIf="internalData == null">添加预警指标</h1>
+<h1 mat-dialog-title *ngIf="internalData != null">修改预警指标</h1>
+<div class="container" mat-dialog-content>
+  <div class="left">
+    <div class="name">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>名称</mat-label>
+        <input matInput placeholder="" [(ngModel)]="data.name">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>表达式</mat-label>
+        <textarea matInput placeholder="" [(ngModel)]="data.expression"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="full-width" (click)="check(data.expression)">校验</button>
+    </div>
+  </div>
+  <div class="right">
+    <h2>当前环境支持如下变量：</h2>
+    <mat-list class="list">
+      <mat-list-item *ngFor="let item of vars">
+        <div mat-line>{{item.id}} - {{item.type}}</div>
+        <div mat-line>{{item.description}} </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<div mat-dialog-actions class="clear-fix">
+  <button mat-button [matDialogClose]="null">取消</button>
+  <button mat-button [matDialogClose]="data">确定</button>
+</div>

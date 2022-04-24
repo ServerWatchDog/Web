@@ -1,0 +1,30 @@
+.full-width {
+  width: 100%;
+}
+
+.left, .right {
+  width: 45%;
+  top: 0;
+  bottom: 10%;
+  position: absolute;
+}
+
+.container{
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+.left {
+  left: 3%;
+  textarea {
+    height: 220px;
+  }
+}
+
+.right {
+  right: 3%;
+  .list {
+    overflow: scroll;
+    height: 100%;
+  }
+}

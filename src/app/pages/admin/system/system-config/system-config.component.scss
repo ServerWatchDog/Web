@@ -1,0 +1,18 @@
+.container {
+  padding: 20px;
+  .full-width{
+    width: 50%;
+  }
+  .title{
+    display: inline-block;
+    margin-right: 20px;
+    width: 15%;
+  }
+  .update-btn{
+    display: inline-block;
+    float: right;
+    button{
+      margin-left: 10px;
+    }
+  }
+}

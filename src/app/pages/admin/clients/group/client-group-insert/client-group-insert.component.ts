@@ -1,5 +1,9 @@
 import {Component, Inject, Injectable, OnInit} from '@angular/core';
-import {MonitorTypeService, MonitorTypeView} from "../../../../../service/mods/monitor-type.service";
+import {
+  MonitorTypeService,
+  MonitorTypeView,
+  MonitorValueTypeResultView
+} from "../../../../../service/mods/monitor-type.service";
 import {MiniMonitorGroupView, MonitorGroupService} from "../../../../../service/mods/monitor-group.service";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Observable, zip} from "rxjs";

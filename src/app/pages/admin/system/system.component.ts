@@ -3,26 +3,26 @@ import {ChildRoute} from "../users/users.component";
 import {DashBoardService} from "../../../service/mods/dash-board.service";
 import {TitleService} from "../../../service/utils/title.service";
 import {Router} from "@angular/router";
-import {fromEvent} from "rxjs";
 
 @Component({
-  selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.scss']
+  selector: 'app-system',
+  templateUrl: './system.component.html',
+  styleUrls: ['./system.component.scss']
 })
-export class ClientsComponent implements OnInit {
+export class SystemComponent implements OnInit {
 
 
   links: ChildRoute[] = [{
-    name: '终端管理',
-    url: '/client/client'
-  }, {
-    name: '终端分组',
-    url: '/client/group'
-  }, {
-    name: '采集指标管理',
-    url: '/client/monitor'
+    name: '配置管理',
+    url: '/system/config'
   }
+    // , {
+    //   name: '终端分组',
+    //   url: '/client/group'
+    // }, {
+    //   name: '采集指标管理',
+    //   url: '/client/monitor'
+    // }
   ];
   activeLink = this.links[0];
 
@@ -33,9 +33,9 @@ export class ClientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("终端管理")
-    if ('/client' == decodeURI(this.route.url)) {
-      this.route.navigate(['client', 'client']).then()
+    this.title.setTitle("系统管理")
+    if ('/system' == decodeURI(this.route.url)) {
+      this.route.navigate(['system', 'config']).then()
     }
     for (let link of this.links) {
       if (link.url == this.route.url) {
@@ -43,4 +43,5 @@ export class ClientsComponent implements OnInit {
       }
     }
   }
+
 }

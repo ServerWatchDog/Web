@@ -43,10 +43,27 @@ import {MonitorTypeGroupInsertComponent} from './pages/admin/monitor/group/inser
 import {MonitorComponent} from "./pages/admin/monitor/monitor/monitor.component";
 import {ClientsComponent} from './pages/admin/clients/clients.component';
 import {ClientComponent} from './pages/admin/clients/client/client.component';
-import {ClientMonitorComponent} from './pages/admin/clients/client-monitor/client-monitor.component';
 import {ClientGroupComponent} from "./pages/admin/clients/group/client-group.component";
-import { ClientInsertComponent } from './pages/admin/clients/client/client-insert/client-insert.component';
-import { ClientGroupInsertComponent } from './pages/admin/clients/group/client-group-insert/client-group-insert.component';
+import {ClientInsertComponent} from './pages/admin/clients/client/client-insert/client-insert.component';
+import {
+  ClientGroupInsertComponent
+} from './pages/admin/clients/group/client-group-insert/client-group-insert.component';
+import {AlarmComponent} from './pages/admin/alarm/alarm.component';
+import {AlarmRuleComponent} from './pages/admin/alarm/alarm-rule/alarm-rule.component';
+import {AlarmRuleGroupComponent} from './pages/admin/alarm/alarm-rule-group/alarm-rule-group.component';
+import {AlarmRuleClientComponent} from './pages/admin/alarm/alarm-rule-client/alarm-rule-client.component';
+import {LogsComponent} from './pages/admin/logs/logs.component';
+import {ClientLogComponent} from './pages/admin/logs/client-log/client-log.component';
+import {AlarmLogComponent} from './pages/admin/logs/alarm-log/alarm-log.component';
+import {MessageLogComponent} from './pages/admin/logs/message-log/message-log.component';
+import {OperateLogComponent} from './pages/admin/logs/operate-log/operate-log.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {ClientMonitorComponent} from "./pages/admin/clients/client-monitor/client-monitor.component";
+import { ClientMonitorUpdateComponent } from './pages/admin/clients/client-monitor/client-monitor-update/client-monitor-update.component';
+import { SystemConfigComponent } from './pages/admin/system/system-config/system-config.component';
+import { SystemComponent } from './pages/admin/system/system.component';
+import { AlarmSendComponent } from './pages/admin/alarm/alarm-send/alarm-send.component';
+import { AlarmRuleInsertComponent } from './pages/admin/alarm/alarm-rule/alarm-rule-insert/alarm-rule-insert.component';
 
 @NgModule({
   declarations: [
@@ -70,9 +87,23 @@ import { ClientGroupInsertComponent } from './pages/admin/clients/group/client-g
     ClientsComponent,
     ClientComponent,
     ClientGroupComponent,
-    ClientMonitorComponent,
     ClientInsertComponent,
-    ClientGroupInsertComponent
+    ClientMonitorComponent,
+    ClientGroupInsertComponent,
+    AlarmComponent,
+    AlarmRuleComponent,
+    AlarmRuleGroupComponent,
+    AlarmRuleClientComponent,
+    LogsComponent,
+    ClientLogComponent,
+    AlarmLogComponent,
+    MessageLogComponent,
+    OperateLogComponent,
+    ClientMonitorUpdateComponent,
+    SystemConfigComponent,
+    SystemComponent,
+    AlarmSendComponent,
+    AlarmRuleInsertComponent
   ],
   imports: [
     MatDialogModule,
@@ -101,6 +132,7 @@ import { ClientGroupInsertComponent } from './pages/admin/clients/group/client-g
     MatSlideToggleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [ContainerComponent]

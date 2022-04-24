@@ -3,25 +3,28 @@ import {ChildRoute} from "../users/users.component";
 import {DashBoardService} from "../../../service/mods/dash-board.service";
 import {TitleService} from "../../../service/utils/title.service";
 import {Router} from "@angular/router";
-import {fromEvent} from "rxjs";
 
 @Component({
-  selector: 'app-clients',
-  templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.scss']
+  selector: 'app-alarm',
+  templateUrl: './alarm.component.html',
+  styleUrls: ['./alarm.component.scss']
 })
-export class ClientsComponent implements OnInit {
+export class AlarmComponent implements OnInit {
 
 
   links: ChildRoute[] = [{
-    name: '终端管理',
-    url: '/client/client'
+    name: '预警规则管理',
+    url: '/alarm/rules'
   }, {
-    name: '终端分组',
-    url: '/client/group'
+    name: '预警规则分组',
+    url: '/alarm/groups'
   }, {
-    name: '采集指标管理',
-    url: '/client/monitor'
+    name: '终端绑定',
+    url: '/alarm/clients'
+  },{
+    name:'通知目标',
+    url:'/alarm/send'
+
   }
   ];
   activeLink = this.links[0];
@@ -33,9 +36,9 @@ export class ClientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("终端管理")
-    if ('/client' == decodeURI(this.route.url)) {
-      this.route.navigate(['client', 'client']).then()
+    this.title.setTitle("预警管理")
+    if ('/alarm' == decodeURI(this.route.url)) {
+      this.route.navigate([this.links[0].url]).then()
     }
     for (let link of this.links) {
       if (link.url == this.route.url) {
@@ -43,4 +46,5 @@ export class ClientsComponent implements OnInit {
       }
     }
   }
+
 }

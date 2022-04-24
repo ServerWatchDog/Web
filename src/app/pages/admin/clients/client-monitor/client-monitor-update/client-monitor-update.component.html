@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="title">绑定 {{data?.client?.name}} 的采集指标</h1>
+  <div class="left">
+    <h2>采集指标分组</h2>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let data of monitorGroupData" [selected]="selected(data.monitorTypes)" #select
+                       (click)="selectGroup(data.monitorTypes,select.selected)">
+        {{data.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="right">
+    <h2>采集指标</h2>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let data of monitorData" [(selected)]="data.selected">
+        {{data.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="submit clear-fix">
+    <button mat-button [matDialogClose]="null">取消</button>
+    <button mat-button [matDialogClose]="resultData()">确定</button>
+  </div>
+</div>
